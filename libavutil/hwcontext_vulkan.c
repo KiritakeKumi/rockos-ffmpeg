@@ -2238,7 +2238,7 @@ static AVBufferRef *vulkan_pool_alloc(void *opaque, size_t size)
 #else
     if (p->vkctx.extensions & FF_VK_EXT_EXTERNAL_FD_MEMORY)
         try_export_flags(hwfc, &eiinfo.handleTypes, &e,
-                         VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT);
+                         VK_EXTERNAL_MEMORY_HANDLE_TYPE_SYNC_FD_BIT);
 #endif
 
     for (int i = 0; i < av_pix_fmt_count_planes(hwfc->sw_format); i++) {
